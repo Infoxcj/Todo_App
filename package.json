@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "node open.js && nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "nodemon": "^2.0.21"
   },
   "devDependencies": {
+    "open": "^8.4.2",
     "tailwindcss": "^3.2.7"
   }
 }
