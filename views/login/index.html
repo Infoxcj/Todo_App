@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <title>Login</title>
 </head>
-
 <body class="bg-zinc-50">
   <nav id="navbar" class="fixed top-0 right-0 left-0 bg-green-500 h-16">
   </nav>
@@ -17,7 +16,7 @@
     <div class="hidden lg:flex w-2/4 justify-center items-center">
       <img class="w-3/4" src="/images/signup.svg" alt="imagen de registro">
     </div>
-    <form class="flex flex-col gap-4 bg-zinc-200 p-4 rounded-lg text-mg shadow-lg lg:w-2/4">
+    <form class="flex flex-col gap-4 bg-zinc-200 p-4 rounded-lg text-mg shadow-lg w-full lg:w-2/4 md:w-3/4 ">
       <div class="flex flex-col gap-2">
         <label for="email-input" class="font-bold text-zinc-900">
           Correo <span class="text-red-500">*</span>
@@ -31,16 +30,18 @@
         </label>
         <input type="password" id="password-input" name="password-input" autocomplete="off"
           class="rounded-lg p-2 bg-zinc-100 focus:outline-neutral-500">
-        <p class="text-xs text-zinc-800"></p>
+        <p id="error-text" class="text-sm text-red-600"></p>
       </div>
+
+      <a class="text-center hover:underline" href="/resetPassword">Olvidé mi contraseña</a>
+
       <button id="form-btn"
         class="bg-green-500 py-2 px-4 rounded-lg font-bold text-white hover:bg-green-600 text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">Iniciar
-        Sesion
+        Sesión
       </button>
     </form>
   </div>
   <script src="../components/nav.js"></script>
-  <!-- <script src="index.js"></script> -->
+  <script src="index.js"></script>
 </body>
-
 </html>
