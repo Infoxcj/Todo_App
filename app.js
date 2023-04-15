@@ -7,6 +7,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const usersRouter = require('./controllers/user');
+const loginRouter = require('./controllers/login');
 
 (async () => {
   try {
@@ -24,13 +25,16 @@ app.use(cookieParser());
 //Rutas frontend
 app.use('/', express.static(path.resolve('views', 'home')));
 app.use('/signup', express.static(path.resolve('views', 'signup',)));
-app.use('/login', express.static(path.resolve('views', 'login',)));
-app.use('/components', express.static(path.resolve('views', 'components',)));
-app.use('/images', express.static(path.resolve('img',)));
+app.use('/login', express.static(path.resolve('views', 'login')));
+app.use('/app', express.static(path.resolve('views', 'app')));
+app.use('/components', express.static(path.resolve('views', 'components')));
+app.use('/images', express.static(path.resolve('img')));
+app.use('/verify/:id/:token', express.static(path.resolve('views', 'verify')));
 
 app.use(morgan('tiny'));
 
 //Rutas backend
 app.use('/api/users', usersRouter);
+app.use('/api/login', loginRouter);
 
 module.exports = app;
